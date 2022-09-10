@@ -15,10 +15,7 @@
         <h1><b>Etch a Sketch!</b></h1>
     </div>
     <div class="slide-container">
-        <div>
-            <input type="range" min="2" max="100" value="50" class="slider" id="myRange">
-        </div>
-        <div class="btn">
+        <div class="btn-container">
             <button id="random"> <b>Random</b> </button>
             <button id="rgb"> <b>RGB</b> </button>
             <button id="black"> <b>Black</b> </button>
@@ -26,6 +23,12 @@
         </div>
     </div>
     <div class="grid"></div>
+    <div class="number-slider">
+        <div>
+            <input type="range" min="2" max="100" value="16" class="slider" id="myRange">
+        </div>
+        <div class="value"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

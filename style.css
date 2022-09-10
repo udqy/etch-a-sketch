@@ -10,6 +10,7 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+    background-image: url('background.jpg');
 }
 
 .grid{
@@ -27,16 +28,24 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.356);
 }
 
+h1 {
+    color:black;
+}
+
 .btn-container {
     display: flex;
     gap: 10px;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     justify-content: center;
     align-items: center;
 }
 
 button {
     padding: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
 .slider-container {
@@ -44,4 +53,22 @@ button {
     gap: 10px;
     
     padding: 30px;
+}
+
+.number-slider {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;    
+    border: 1.5px solid black;
+    margin: 20px;
+    border-radius: 12px;
+    background-color: aliceblue;
+}
+
+button:hover,
+button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }

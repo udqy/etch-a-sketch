@@ -1,5 +1,4 @@
 const grid = document.querySelector('.grid')
-let val = document.getElementById('myRange').value;
 
 //default grid
 createGrid = () => {
@@ -15,11 +14,13 @@ createGrid = () => {
 };
 
 //slider 
-const slider = document.querySelector('#myRange')
+const slider = document.querySelector('#myRange');
 const screenVal = document.querySelector('.value');
 slider.addEventListener('input', function(){
     removeAllChildNodes(grid);
+    let val = document.getElementById('myRange').value;
     grid.setAttribute('style', `grid-template-columns: repeat(${val}, 2fr); grid-template-rows: repeat(${val}, 2fr);`);
+    screenVal.innerHTML = val;
     for (let i = 0; i < val*val; i++) {
         const div = document.createElement('div');
         div.classList.add('cell');
@@ -29,6 +30,9 @@ slider.addEventListener('input', function(){
         grid.appendChild(div); 
     }
 });
+
+//sets the base value of screenval
+screenVal.innerHTML = '16';
 
 //generates a random color (hex)
 function getRandomColor() {
@@ -40,6 +44,7 @@ function getRandomColor() {
 const rgb = document.querySelector('#rgb');
 rgb.addEventListener('click', function(){
     let cell = grid.children;
+    let val = document.getElementById('myRange').value;
     for (let i = 0; i < val*val; i++) {
         cell[i].addEventListener('mouseover', function(event){
             event.target.style.backgroundColor = getRandomColor();
@@ -51,6 +56,7 @@ rgb.addEventListener('click', function(){
 const black = document.querySelector('#black');
 black.addEventListener('click', function(){
     let cell = grid.children;
+    let val = document.getElementById('myRange').value;
     for (let i = 0; i < val*val; i++) {
         cell[i].addEventListener('mouseover', function(event){
             event.target.style.backgroundColor = 'black';
@@ -63,6 +69,7 @@ const random = document.querySelector('#random')
 random.addEventListener('click', function(){
     let randomCol = getRandomColor();
     let cell = grid.children;
+    let val = document.getElementById('myRange').value;
     for (let i=0; i<val*val; i++) {
         cell[i].addEventListener('mouseover', function(event){
             event.target.style.backgroundColor = randomCol;
@@ -74,11 +81,11 @@ random.addEventListener('click', function(){
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', function(){
     let cell = grid.children;
+    let val = document.getElementById('myRange').value;
     for (let i=0; i<val*val; i++) {
         cell[i].style.backgroundColor = 'white';
     }
 })
-
 
 //remove all colored divs
 function removeAllChildNodes(parent){
