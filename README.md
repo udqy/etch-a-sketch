@@ -1,2 +1,3 @@
-# etch-as-sketch
+# etch-a-sketch
 Etch-a-sketch!
+Have fun :)
